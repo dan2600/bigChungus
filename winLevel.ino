@@ -1,4 +1,4 @@
-
+//Beat a Level
 void updateScore() {
   arduboy.setCursor(35, 42);
   arduboy.print("Score: ");

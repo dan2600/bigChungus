@@ -1,3 +1,4 @@
+//Start up the level and play the intro
 void levelIntro() {
   if(theGame.lives == 0)
   {
@@ -19,7 +20,7 @@ void levelIntro() {
       arduboy.setCursor(15, 20);
       arduboy.print("Target Weight ");
       arduboy.print(thePlayer.targetweight);
-      arduboy.print(" lb");      
+      arduboy.print("lb");      
       arduboy.setCursor(30, 30);
       arduboy.print("Feet Left: ");
       arduboy.print(theGame.feet);

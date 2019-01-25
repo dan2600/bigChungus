@@ -1,3 +1,5 @@
+//Game Over!
+
 bool changed = false;
 bool inputName = false;
 char nameInput[3] = "   ";
@@ -73,7 +75,7 @@ void gameOver() {
   arduboy.setCursor(2, 48);
   arduboy.print("Weight:");
   arduboy.print(thePlayer.weight);
-  arduboy.print(" lb");
+  arduboy.print("lb");
   arduboy.display();
   for (int i = 700; i > 200; i -= 50)
   {

@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
-  "title": "An Example",
-  "description": "This is an example json file ",
-  "author": "delegatevoid - crait - MLXXXp - JO3RI",
+  "title": "Big Chungus",
+  "description": "Big Chungs: THE GAME. Run and collect enough carrots to get big and become BIG CHUNGUS",
+  "author": "dan2600",
   "version": "1.0",
-  "date": "2017-01-25",
-  "genre": "Misc",
-  "publisher": "Arduboy Community",
-  "idea": "delegatevoid - crait - MLXXXp - JO3RI",
-  "code": "delegatevoid - crait - MLXXXp - JO3RI",
-  "art": "delegatevoid - crait - MLXXXp - JO3RI",
-  "sound": "delegatevoid - crait - MLXXXp - JO3RI",
+  "date": "2019-01-24",
+  "genre": "Runner",
+  "publisher": "dan2600",
+  "idea": "dan2600",
+  "code": "dan2600",
+  "art": "dan2600",
+  "sound": "dan2600",
   "url": "http://community.arduboy.com/t/arduboy-game-format-guide-arduboy-files/2784",
   "sourceUrl": "https://github.com/TEAMarg/arduboy-file-format/blob/master/info.json",
   "email": "info@arduboy.com",
@@ -18,12 +18,8 @@
   "banner": "chungusLogo.png",
   "screenshots": [
     {
-      "title": "title screen",
-      "filename": "screenshot00.png"
-    },
-    {
-      "title": "level 1 in game",
-      "filename": "screenshot01.png"
+      "title": "BIG CHUNGUS",
+      "filename": "gameplay.png"
     }
   ],
   "binaries": [
@@ -36,36 +32,32 @@
   "buttons": [
     {
       "control": "A",
-      "action": "pause"
+      "action": "Jump"
     },
     {
       "control": "B",
-      "action": "action"
+      "action": "Big jump"
     },
     {
       "control": "Up",
-      "action": "jump"
+      "action": "spend 1000xlevel points to grow"
     },
     {
       "control": "Down",
-      "action": "duck"
+      "action": "spend one food as big chungus to be invicible for 2 seconds"
     },
     {
       "control": "Left",
-      "action": "run left"
+      "action": "move left"
     },
     {
       "control": "Right",
-      "action": "run right"
-    },
-    {
-      "control": "A + B",
-      "action": "explode"
+      "action": "move right"
     }
   ],
   "eeprom": {
-    "variable": false,
+    "variable": true,
     "start": 16,
-    "end": 20
+    "end": 40
   }
 }

@@ -1,5 +1,10 @@
 //This Game is called Big Chungus
+//by @dan2600
+//In the Year 2019
 
+
+
+//Define some structs for Chungs (the game) Player (The Player) Wall (Wall Objects) Carrot (Carrots) High Scores (Obvious)
 struct CHUNGUS {
   byte level;
   byte lives;
@@ -48,6 +53,8 @@ struct THEHIGHSCORES {
   unsigned int weightThree;
 };
 
+
+//Import the stuff and define the objects
 #include <Arduboy2.h>
 #include <ArduboyPlaytune.h>
 THEHIGHSCORES highscores;
@@ -60,6 +67,7 @@ CHUNGUS theGame;
 PLAYER thePlayer = {0, 0, 0, 0, false, false, false, playerSmall};
 
 
+//Some Helpful Functions
 
 void animatePlayer() {
   thePlayer.playerFrame++;
@@ -78,7 +86,7 @@ void flashScreen(int numLoops, int delaySpeed) {
   }
 }
 
-
+//Setup
 
 void setup() {
   initEEPROM();
@@ -97,7 +105,7 @@ void setup() {
   tunes.initChannel(PIN_SPEAKER_1);
   tunes.initChannel(PIN_SPEAKER_2);
 }
-
+//Main Loop
 void loop() {
   if (!arduboy.nextFrame()) {
     return;

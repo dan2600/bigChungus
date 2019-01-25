@@ -1,3 +1,6 @@
+//Main gameplay
+
+
 #define NUMBER_OF_OBSTACLES 3
 byte inviTimer = 120;
 int jumpHeight = 0;
@@ -41,6 +44,7 @@ CARROT carrot = {
   carrotImg
 };
 
+//Ground Animation Function
 void animateGround() {
   for (int i = 0; i < 9; i++) {
     arduboy.drawBitmap((0 + (16 * i)) - tileoffset, 52, ground, 16, 12, WHITE);
@@ -50,7 +54,7 @@ void animateGround() {
     tileoffset = 0;
   }
 }
-
+//Object Launcher
 void launchObstacle(byte obstacleNumber) {
   obstacles[obstacleNumber].x = 148;
   if (theGame.level >= 3)
@@ -62,12 +66,14 @@ void launchObstacle(byte obstacleNumber) {
   obstacles[obstacleNumber].isActive = true;
 }
 
+//Carrot Launcher
 void launchCarrot() {
   carrot.isActive = true;
   carrot.x = 148;
   carrot.y = random(10, 45);
 }
 
+//Update Objects
 void updateObstacles() {
   for (byte i = 0; i < NUMBER_OF_OBSTACLES; i++) {
     if (obstacles[i].isActive == true) {
@@ -95,6 +101,7 @@ void updateObstacles() {
   }
 }
 
+//See if they touch a wall
 bool collision() {
   if (inviTimer > 0) {
     return false;
@@ -109,6 +116,7 @@ bool collision() {
   return false;
 }
 
+//See if they touch a carrot
 bool collisionCarrot() {
   if (carrot.isActive == true) {
     if (collide(thePlayer.x, thePlayer.y - getImageHeight(thePlayer.image) / 2, thePlayer.image, carrot.x, carrot.y - getImageHeight(carrot.image), carrot.image))
@@ -119,6 +127,7 @@ bool collisionCarrot() {
   return false;
 }
 
+//See if the world is clear
 bool allClear() {
   for (byte i = 0; i < NUMBER_OF_OBSTACLES; i++) {
     if (obstacles[i].isActive) {
@@ -132,7 +141,7 @@ bool allClear() {
 }
 
 
-
+//See if they are heavy enough to become CHUNGUS
 void chungusCheck() {
   if (thePlayer.weight >= thePlayer.targetweight && !thePlayer.chungused) {
     tunes.playScore(godzill);
@@ -173,13 +182,11 @@ void chungusCheck() {
   }
 }
 
-
+//Gameplay Loop
 void gamePlay() {
-
   if (inviTimer > 0) {
     --inviTimer;
   }
-
   arduboy.setCursor(0, 0);
 
   unsigned long no = theGame.score;
@@ -358,7 +365,7 @@ void gamePlay() {
       flashScreen(20, 5);
     }
   }
-
+//Sound function for scoring.
   if (makeSound) {
     arduboy.setTextSize(1);
     if (scoreSound < 800 && arduboy.everyXFrames(1))
@@ -372,6 +379,4 @@ void gamePlay() {
       makeSound = false;
     }
   }
-
-
 }

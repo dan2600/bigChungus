@@ -1,4 +1,6 @@
+
 const uint8_t PROGMEM lookup[] { 0xFF >> 8, 0xFF >> 7, 0xFF >> 6, 0xFF >> 5, 0xFF >> 4, 0xFF >> 3, 0xFF >> 2, 0xFF >> 1 };
+
 
 /* ----------------------------------------------------------------------------
  *  Detect a collision between two separate images ..

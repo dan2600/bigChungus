@@ -4,7 +4,7 @@ void drawScore(byte level, int weight, unsigned long score, byte y1, byte y2) {
   arduboy.print(level);
   arduboy.print(" WT. ");
   arduboy.print(weight);
-  arduboy.print(" lb");
+  arduboy.print("lb");
   arduboy.setCursor(39, y2);
   arduboy.print("SCORE:");
   arduboy.print(score);
